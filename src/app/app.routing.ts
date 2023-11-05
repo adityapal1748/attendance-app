@@ -8,8 +8,7 @@ const appRoutes: Routes =[
     // 
     {path:'', component:LoginComponent},
     {path:"attendance",component:AttendanceDetailsComponent,canActivate:[CanActivateGuard]},
-    // {path:'not-found',component:LoginComponent},
-    {path:'**',redirectTo:""}
+    {path:'**',redirectTo:""} //redirect the user to the empty url
 ]
 
 

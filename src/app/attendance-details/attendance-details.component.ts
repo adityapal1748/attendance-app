@@ -22,14 +22,15 @@ export class AttendanceDetailsComponent implements OnInit {
   }
   getUserData() {
     this.service.getLoginData().subscribe((res: any) => {
-      console.log(res?.attendanceData[0].attendance);
+      //find the user and its attendace details
       let userData = res?.attendanceData.find((el: any) => el.user == this.username)
 
+      this.dataSource = new MatTableDataSource(userData.attendance) //update the datasource
 
-      this.dataSource = new MatTableDataSource(userData.attendance)
       userData.attendance.forEach((element: any) => {
         let startDate: any = new Date(element.date);
         let currentDate: any = new Date()
+        //check if the user is punched in for the current date and enable the btn
         if (isSameDay(startDate, currentDate)) {
           this.punchInBtn = true
         }
@@ -50,10 +51,13 @@ export class AttendanceDetailsComponent implements OnInit {
     this.punchOutBtn = false
   }
   punchOut() {
+    //add the punchout time and update the datasource
     this.dataSource.data[this.dataSource.data.length - 1].punchOut = format(new Date(), 'HH:mm:ss')
     this.dataSource = new MatTableDataSource(this.dataSource.data)
     this.punchOutBtn = true
     let time = this.dataSource.data[this.dataSource.data.length - 1]
+
+    //get the duration for which the employee punched in and out
     this.dataSource.data[this.dataSource.data.length - 1].duration = this.subtractTimes(time.punchIn, time.punchOut)
     this.dataSource = new MatTableDataSource(this.dataSource.data)
     this.punchOutBtn = true

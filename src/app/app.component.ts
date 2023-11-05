@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
   
 
   logout(){
-    localStorage.clear()
+    localStorage.clear()   //clear the session and navigate the user to the login page
     this.router.navigate([''])
   }
 }
