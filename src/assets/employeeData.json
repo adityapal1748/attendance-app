@@ -1,0 +1,43 @@
+{
+    "credentials": [
+      {
+        "email":"test1@gmail.com",
+        "password":"test1@gmail.com",
+        "name":"user1"
+      },
+      {
+        "email":"test2@gmail.com",
+        "password":"test2@gmail.com",
+        "name":"user2"
+      }
+    ],
+    "attendanceData": [
+      {
+        "user":"test1@gmail.com",
+        "attendance":[
+          {
+          "date":"Sun Nov 02 2023 21:01:39 GMT+0530 (India Standard Time)",
+          "punchIn":"10:11:21",
+          "punchOut":"21:01:00",
+          "status":"abs",
+          "duration":"23:0:0"
+          },
+          {
+          "date":"Sun Nov 03 2023 21:01:39 GMT+0530 (India Standard Time)",
+          "punchIn":"10:11:21",
+          "punchOut":"21:01:00",
+          "status":"abs",
+          "duration":"23:0:0"
+          },
+          {
+          "date":"Sun Nov 04 2023 21:01:39 GMT+0530 (India Standard Time)",
+          "punchIn":"10:11:21",
+          "punchOut":"21:01:00",
+          "status":"abs",
+          "duration":"23:0:0"
+          }
+        ]
+        
+      }
+    ]
+  }

@@ -1,0 +1,26 @@
+<div class="card-container">
+    <mat-card >
+        <mat-card-title class="title">Login</mat-card-title>
+        <mat-card-content>
+            <div class="user-credentials">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="pat@example.com" [formControl]="email" >
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="submit-btn">
+                <button color="primary" mat-raised-button (click)="login()"> submit </button>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+    
+</div>

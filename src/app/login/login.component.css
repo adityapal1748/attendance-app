@@ -1,0 +1,15 @@
+.card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+.user-credentials{
+    display: flex;
+    flex-direction: column;
+    
+}
+.title{
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
